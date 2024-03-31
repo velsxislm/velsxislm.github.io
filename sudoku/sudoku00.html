@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="sudoku.css">
+  </head>
+  <body>
+    <h1>Welcome to Sudoku Game!</h1>
+    <h3>Sudoku is a logic-based, combinatorial number-placement puzzle.</h3>
+    <p>In classical Sudoku, the objective is to fill a 9*9 grid with digits so that each column, each row, and each of the nine 3*3 subgrids that compose the grid contains all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a single solution.</p>
+    <p>This game consists of three puzzles of increasing difficulty, which are 3*3, 6*6, and 9*9. Click the button below to start!</p>
+    <button onclick="nextPuzzle()">Start Game</button>
+
+    <script>
+    function nextPuzzle() {
+    window.location.href = "sudoku01.html";
+    }
+    </script>
+  </body>
+</html>

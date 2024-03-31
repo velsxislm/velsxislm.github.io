@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="sudoku.css">
+    <style>
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="title">Level 1: Easy (4x4 Sudoku)</h1>
+<div id="sudokuContainer">
+<div id="sudokuBoard"></div>
+</div>
+
+<!-- 让玩家填的表格，有几个输入框需要填写-->
+<table class="table" id="playerAnswersTable">
+    <tr>
+        <td>2</td>
+        <td><input type="number" min="1" max="4" oninput="checkCellValue(this)"></td>
+        <td>1</td>
+        <td><input type="number" min="1" max="4" oninput="checkCellValue(this)"></td>
+    </tr>
+    <tr>
+        <td><input type="number" min="1" max="4" oninput="checkCellValue(this)"></td>
+        <td>4</td>
+        <td><input type="number" min="1" max="4" oninput="checkCellValue(this)"></td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td><input type="number" min="1" max="4" oninput="checkCellValue(this)"></td>
+        <td><input type="number" min="1" max="4" oninput="checkCellValue(this)"></td>
+        <td><input type="number" min="1" max="4" oninput="checkCellValue(this)"></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><input type="number" min="1" max="4" oninput="checkCellValue(this)"></td>
+        <td>3</td>
+        <td>1</td>
+    </tr>
+</table>
+
+<!--文字和下一关的按钮，全部填写并且完全正确后才会出现-->
+<p class="note" id="congrats" style="display:none;">Congratulations! You made it! Click the button below to get to the next level ;)</p>
+<button class="btn" id="nextLevelBtn" style="display: none;" onclick="nextPuzzle()">Next Level</button>
+
+<script>
+//从玩家表格里找到输入框
+    function checkCellValue(input) {
+        var inputs = document.querySelectorAll('#playerAnswersTable input');
+        var allFilled = true;
+        var allCorrect = true;
+//如果找到没写的输入框，判定为没有全部填写，反之判为全填写
+        inputs.forEach(function (input) {
+            if (input.value === '') {
+                allFilled = false;
+            }
+        });
+//如果全部填写了，就找到该答案所在的行和列索引，把这个参数代入标准答案表找到相应答案
+        if (allFilled) {
+            inputs.forEach(function (input) {
+                var row = input.parentNode.parentNode.rowIndex;
+                var col = input.parentNode.cellIndex;
+                var standardAnswer = getStandardAnswer(row, col);
+//如果玩家输入的答案和标准答案不同，就归为incorrect类（同时错误答案变红)，allCorrect判别为false，反之则移除incorrect
+                if (input.value !== standardAnswer.toString()) {
+                    input.classList.add('incorrect');
+                    allCorrect = false;
+                } else {
+                    input.classList.remove('incorrect');
+                }
+            });
+//如果全对，文字和下一关的按钮就会出现
+            if (allCorrect) {
+                document.getElementById('congrats').style.display = 'block';
+                document.getElementById('nextLevelBtn').style.display = 'block';
+            } else {
+                document.getElementById('congrats').style.display = 'none';
+                document.getElementById('nextLevelBtn').style.display = 'none';
+            }
+        } else {
+            document.getElementById('congrats').style.display = 'none';
+            document.getElementById('nextLevelBtn').style.display = 'none';
+        }
+    }
+
+//标准答案表
+    function getStandardAnswer(row, col) {
+        var standardAnswers = [
+            [2, 3, 1, 4],
+            [1, 4, 2, 3],
+            [3, 1, 4, 2],
+            [4, 2, 3, 1]
+        ];
+        return standardAnswers[row][col];
+    }
+
+// 进入下一关
+    function nextPuzzle() {
+    window.location.href = "sudoku02.html";
+    }
+
+</script>
+
+</body>
+</html>
