@@ -1,3 +1,9 @@
+.jersey-20-regular {
+  font-family: "Jersey 20", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .navbar {
   background-color: #f2eeda !important;
 }
@@ -29,7 +35,7 @@
 }
 
 #fixed01 {
-  background-image: url('img/bg/bg04.JPG');
+  background-image: url('img/bg/bg04.jpg');
   width: 100%;
   height: 600px;
   position:relative;
@@ -73,23 +79,24 @@
 }
 
 figcaption {
-  font-family: fantasy;
-  font-size: 80px;
+  font-size: 100px;
   color: #006360;
   text-align: left;
   margin-left: 7vw;
   position: absolute;
-  bottom: -3rem;
+  bottom: -4rem;
 }
 
 #figcaption01 {
-  font-family: fantasy;
-  font-size: 80px;
+  font-family: "Jersey 20", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px;
   color: #36b294;
   text-align: left;
   margin-left: 7vw;
   position: absolute;
-  bottom: -3rem;
+  bottom: -4rem;
 }
 
 .aiArtsContainer {
@@ -175,7 +182,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #f6f6f6;
-    font-family: fantasy;
+    font-family: "Jersey 20", sans-serif;
+    font-weight: 200;
+    font-style: normal;
 }
 
 .btn:hover {
@@ -188,7 +197,9 @@ body {
 }
 
 .card-title{
-  font-family: fantasy;
+  font-family: "Jersey 20", sans-serif;
+  font-weight: 200;
+  font-style: normal;
   color: #f6f6f6;
 }
 
@@ -199,12 +210,15 @@ body {
 }
 
 .title1 {
-  font-family: fantasy;
-  font-size: 80px;
+  font-family: "Jersey 20", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px;
   color: #006360;
   text-align: left;
-  margin-left: 5vw;
+  margin-left: 7vw;
   margin-top: 5rem;
+  margin-bottom: 3rem;
 }
 
 .carouselAndIntro {
@@ -337,11 +351,13 @@ footer{
 #getInTouch {
   margin-top: 5vw;
   left: 5%;
-  font-family: fantasy;
+  font-family: "Jersey 20", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 #getInTouch h1 {
-  font-size: 80px;
+  font-size: 100px;
   color: #36b294;
   padding-top: 5vw;
   padding-bottom: 5vw;
@@ -379,7 +395,9 @@ footer{
 }
 
 #copyright {
-  font-family: fantasy;
+  font-family: "Jersey 20", sans-serif;
+  font-weight: 200;
+  font-style: normal;
   font-size: 16px;
   font-size-adjust: auto;
   color: #36b294;
